@@ -87,15 +87,42 @@ Pour ces questions, tu vas devoir effectuer des boucles dans la console Rails. C
 
 - puts en console tous les titres de AC/DC.
 
+``` Ruby
+Track.where(artist: "AC/DC").each do |track|
+  puts track.title
+end
+```
 
 - puts en console tous les titres de l'album "Let There Be Rock".
 
+``` Ruby
+Track.where(artist: "AC/DC").each do |track|
+  puts track.title
+end
+```
 
 - Calcule le prix total de cet album ainsi que sa durée totale.
 
+``` Ruby
+Track.where(album: "Let There Be Rock").each do |track|
+  puts track.title
+end
+```
 
 - Calcule le coût de l'intégralité de la discographie de "Deep Purple".
 
+``` Ruby
+total_deep_purple_price = 0
+Track.where(artist: "Deep Purple").each do |track|
+  sum += track.price
+end
+total_deep_purple_price
+```
 
 - Modifie (via une boucle) tous les titres de "Eric Clapton" afin qu'ils soient affichés avec "Britney Spears" en artist.
 
+``` Ruby
+Track.where(artist: "Eric Clapton").each do |track|
+  track.update(artist: "Britney Spears")
+end
+```
