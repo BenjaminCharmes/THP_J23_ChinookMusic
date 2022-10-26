@@ -87,6 +87,25 @@ Pour ces questions, tu vas devoir effectuer des boucles dans la console Rails. C
 
 - puts en console tous les titres de AC/DC.
 
+Réponse: `=>
+For Those About To Rock (We Salute You)
+Put The Finger On You
+Lets Get It Up
+Inject The Venom
+Snowballed
+Evil Walks
+C.O.D.
+Breaking The Rules
+Night Of The Long Knives
+Spellbound
+Go Down
+Dog Eat Dog
+Let There Be Rock
+Bad Boy Boogie
+Problem Child
+Overdose
+Hell Aint A Bad Place To Be
+Whole Lotta Rosie`
 ``` Ruby
 Track.where(artist: "AC/DC").each do |track|
   puts track.title
@@ -95,32 +114,51 @@ end
 
 - puts en console tous les titres de l'album "Let There Be Rock".
 
-``` Ruby
-Track.where(artist: "AC/DC").each do |track|
-  puts track.title
-end
-```
-
-- Calcule le prix total de cet album ainsi que sa durée totale.
-
+Réponse: `=> 
+Go Down
+Dog Eat Dog
+Let There Be Rock
+Bad Boy Boogie
+Problem Child
+Overdose
+Hell Aint A Bad Place To Be
+Whole Lotta Rosie`
 ``` Ruby
 Track.where(album: "Let There Be Rock").each do |track|
   puts track.title
 end
 ```
 
+- Calcule le prix total de cet album ainsi que sa durée totale.
+
+Réponse: `=> 
+price = 7.92
+duration = 2453259`
+``` Ruby
+price = 0
+duration = 0
+Track.where(album: "Let There Be Rock").each do |track|
+  duration += track.duration
+  price += track.price
+end
+price
+duration
+```
+
 - Calcule le coût de l'intégralité de la discographie de "Deep Purple".
 
+Réponse: `=> 90.09`
 ``` Ruby
 total_deep_purple_price = 0
 Track.where(artist: "Deep Purple").each do |track|
-  sum += track.price
+  total_deep_purple_price += track.price
 end
 total_deep_purple_price
 ```
 
 - Modifie (via une boucle) tous les titres de "Eric Clapton" afin qu'ils soient affichés avec "Britney Spears" en artist.
 
+Réponse: `=> 👍`
 ``` Ruby
 Track.where(artist: "Eric Clapton").each do |track|
   track.update(artist: "Britney Spears")
