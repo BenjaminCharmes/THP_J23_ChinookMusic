@@ -19,11 +19,24 @@ Album.all.length
 
 - Qui est l'auteur de la chanson "White Room" ?
 
+Réponse: `=> Eric Clapton`
+```
+Track.find_by(title: "White Room").artist
+```
 
 - Quelle chanson dure exactement 188133 milliseconds ?
 
+Réponse: `=> Perfect`
+```
+Track.find_by(duration: 188133).title
+```
 
 - Quel groupe a sorti l'album "Use Your Illusion II" ?
+
+Réponse: `=> Gun N Roses`
+```
+Album.find_by(title: "Use Your Illusion II").artist
+```
 
 
 ### b) Niveau Moyen
